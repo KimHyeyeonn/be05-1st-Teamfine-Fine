@@ -1,6 +1,7 @@
 # be05-1st-Teamfine-Fine
 
 ## Team 소개
+### 프로젝트 명
 
 <div align="center">
   <img src= "https://github.com/KimHyeyeonn/be05-1st-Teamfine-Fine/blob/main/img/header.png"/>
@@ -93,17 +94,20 @@
 
 </br>
 # E-R Diagram
-
+![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/diagram/ERDiagram.png)
 </br>
 # ERD
+![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/diagram/diagram_final.png)
 </br>
 # TEST CASE 명세서
+![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/diagram/diagram_final.png)
 
 ### TEST CASE
 ## 정보조회
 ## 지역
-
-- 사용자는 모든 지역구 별로 사건, 소방 기관, 장비, 용수 시설 조회할 수 있다.
+<details>
+<summary>사용자는 모든 지역구 별로 사건, 소방 기관, 장비, 용수 시설 조회할 수 있다. </summary>
+<div markdown="1">
     
     ```sql
     -- 성북구에서 발생한 사건, 기관, 제설함, 제설도구, 장비 및 용수시설 정보 조회
@@ -132,9 +136,13 @@
         a.district = '성북구'
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/a0c5d741-0de3-44f7-a0b9-80c629f6b2b3/Untitled.png)
-    
-- 사용자는 특정 구에서 발생한 사건, 기관, 제설함, 제설 도구, 장비 및 용수시설 정보를 조회할 수 있다
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A7%80%EC%97%AD1.png)
+</div>
+</details>
+
+<details>
+<summary> 사용자는 특정 구에서 발생한 사건, 기관, 제설함, 제설 도구, 장비 및 용수시설 정보를 조회할 수 있다 </summary>
+<div markdown="2">
     
     ```sql
     SELECT
@@ -153,22 +161,29 @@
         a.district; -- 지역구별로 정렬
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/5376b115-e549-4272-a8a3-1b013ffbaa55/Untitled.png)
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A7%80%EC%97%AD%202.png)
     
-
+</div>
+</details>
 ## 사건
+<details>
+<summary> 사용자는 사건의 사건 분류, 출동 일자 정보를 조회할 수 있다.</summary>
 
-- 사용자는 사건의 사건 분류, 출동 일자 정보를 조회할 수 있다.
-    
+<div markdown="3">    
     ```sql
     SELECT event_case, dispatch_date
     FROM EVENT;
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/9589b4ea-4617-4b2a-93e2-d1765663873b/Untitled.png)
-    
-- 사용자는 사건 정보를 사건 분류, 출동 일자, 날씨, 소방 기관을 기준으로 조회할 수 있다.
-    
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%82%AC%EA%B1%B4%201.png)
+
+</div>
+</details>
+
+
+<details> 
+<summary> 사용자는 사건 정보를 사건 분류, 출동 일자, 날씨, 소방 기관을 기준으로 조회할 수 있다. </summary>
+<div markdown="4">
     ```sql
     SELECT
         e.event_case AS 'Event Case',
@@ -186,13 +201,14 @@
     LEFT JOIN fire_agency fa ON a.id = fa.address_id;
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/d372eec4-0167-4015-b440-92d90aa8846e/Untitled.png)
-    
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%82%AC%EA%B1%B4%202.png)
+</div>
+</details>
 
 ## 소방 기관
-
-- 사용자는 해당 구의 소방 기관의 주소와 전화번호 정보를 조회할 수 있다.
-    
+<details>
+<summary>사용자는 해당 구의 소방 기관의 주소와 전화번호 정보를 조회할 수 있다.</summary>
+<div markdown="5">
     ```sql
     SELECT fa.phone_number AS 'Fire Station Phone Number'
     FROM fire_agency fa
@@ -200,10 +216,12 @@
     WHERE a.district = '동작구';
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/60c36315-ed4e-4b5d-96fb-138ec0dc3331/Untitled.png)
-    
-- 사용자는 주소와 위치 별로 해당 소방 기관의 전화번호를 조회할 수 있다.
-    
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EA%B8%B0%EA%B4%80%201.png)
+</div>
+</details>  
+<details>
+<summary>사용자는 주소와 위치 별로 해당 소방 기관의 전화번호를 조회할 수 있다.</summary>
+<div markdown="6">
     ```sql
     SELECT
         a.district AS 'District',
@@ -217,21 +235,27 @@
         fire_agency fa ON a.id = fa.address_id;
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/fb5634ad-5acf-4b0a-83f3-2b79d0691c4f/Untitled.png)
-    
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EA%B8%B0%EA%B4%80%202.png)
+</div>
+</details>   
 
 ## 소방 장비
-
-- 사용자는 소방 장비의 장비 분류, 구매 일자, 상태 정보를 조회할 수 있다.
+<details>
+<summary>사용자는 소방 장비의 장비 분류, 구매 일자, 상태 정보를 조회할 수 있다.</summary>
+<div markdown="7">
     
     ```sql
     SELECT type, purchase_date, status
     FROM firefighting_equipment ;
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/e2a65d67-30fd-4fae-8a16-2455fdd3a4e1/Untitled.png)
-    
-- 사용자는 특정 구의 소방 기관이 소유하고 있는 장비랑 소방 기관 번호를 알 수 있다.
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EC%9E%A5%EB%B9%84%201.png)
+</div>
+</details>
+
+<details>
+<summary>사용자는 특정 구의 소방 기관이 소유하고 있는 장비랑 소방 기관 번호를 알 수 있다.</summary>
+<div markdown="8">
     
     ```sql
     SELECT fe.type, fe.purchase_date, fe.status, fa.phone_number
@@ -241,12 +265,14 @@
     WHERE a.district = '관악구';
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/579f447a-7bd2-4fa5-b8ef-6e7a25c69ab8/Untitled.png)
-    
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EC%9E%A5%EB%B9%84%202.png)
+</div>
+</details>
+
 
 ## 제설함
-
-- 사용자는 주소를 통해 제설함의 정보를 조회할 수 있다.
+<details>
+<summary>사용자는 주소를 통해 제설함의 정보를 조회할 수 있다.</summary>
     
     ```sql
     SELECT sr.address_id, a.district, a.street_name, a.detail, sr.id AS snow_removal_box_id
@@ -254,21 +280,28 @@
     JOIN address a ON sr.address_id = a.id;
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/99a39c1c-a9ed-4e8d-abc4-385bedca28e6/Untitled.png)
-    
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A0%9C%EC%84%A4%ED%95%A8.png)
+</div>
+</details>
 
 ## 제설 도구
 
-- 사용자는 제설 도구의 도구 유형, 구매 일자를 조회할 수 있다
+<details>
+<summary> 사용자는 제설 도구의 도구 유형, 구매 일자를 조회할 수 있다</summary>
+<div markdown="9">
     
     ```sql
     SELECT TYPE, purchase_date
     FROM snow_removal_tool;
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/75288d56-9191-44a8-b850-3a40445dc3ad/Untitled.png)
-    
-- 사용자는 제설함 번호로 제설 도구의 정보를 조회할 수 있다.
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A0%9C%EC%84%A4%EB%8F%84%EA%B5%AC1.png)
+</div>
+</details>
+
+<details>
+<summary> 사용자는 제설함 번호로 제설 도구의 정보를 조회할 수 있다.</summary>
+<div markdown="10">
     
     ```sql
     SELECT srt.*
@@ -277,21 +310,29 @@
     WHERE srb.id = '3';
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/71b005a7-5068-45bb-9637-0d4b279e840a/Untitled.png)
-    
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A0%9C%EC%84%A4%20%EB%8F%84%EA%B5%AC2.png)
+</div>
+</details>
+
 
 ## 용수 시설
 
-- 사용자는 소방용수시설의 사용 기한을 조회할 수 있다.
+<details>
+<summary> 사용자는 소방용수시설의 사용 기한을 조회할 수 있다.</summary>
+<div markdown="11">
     
     ```sql
     SELECT last_inspection
     FROM firefighting_water;
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/89544a90-292d-445b-8901-5d65f5605794/Untitled.png)
-    
-- 사용자는 특정 주소의 소방용수시설 사용 기한을 조회할 수 있다.
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%9A%A9%EC%88%98%20%EC%8B%9C%EC%84%A4%201.png)
+</div>
+</details>
+
+<details>
+<summary> 사용자는 특정 주소의 소방용수시설 사용 기한을 조회할 수 있다.</summary>
+<div markdown="12">
     
     ```sql
     SELECT fw.address_id, a.district, a.street_name, a.detail, fw.last_inspection
@@ -301,9 +342,13 @@
     ORDER BY fw.last_inspection DESC;
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/ed504e7d-3044-40dc-a5a7-a6bf39a5d326/Untitled.png)
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%9A%A9%EC%88%98%20%EC%8B%9C%EC%84%A4%202.png)
+</div>
+</details>
 
-- 사용자는 최근에 사용한 소방용수시설의 사용 기한을 조회할 수 있다.
+<details>
+<summary> 사용자는 최근에 사용한 소방용수시설의 사용 기한을 조회할 수 있다.</summary>
+<div markdown="13">
     
     ```sql
     SELECT fw.address_id, a.district, a.street_name, a.detail, fw.last_inspection
@@ -313,4 +358,6 @@
     LIMIT 1;
     ```
     
-    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/e6bb4003-6569-4926-984d-f00d6dbe2dea/367c8831-8e82-44ac-b47d-17ce1390b779/Untitled.png)
+    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%9A%A9%EC%88%98%203.png)
+</div>
+</details>
