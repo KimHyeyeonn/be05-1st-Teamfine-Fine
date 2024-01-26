@@ -108,7 +108,7 @@
 # TEST CASE 명세서
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/%ED%85%8C%EC%9D%B4%EC%8A%A4%20%EC%BC%80%EC%9D%B4%EC%8A%A4%20%EB%AA%85%EC%84%B8%EC%84%9C%20(1).png>
 
-### TEST CASE
+# TEST CASE
 ## 정보조회
 ## 지역
 <details>
