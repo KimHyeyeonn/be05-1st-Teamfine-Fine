@@ -26,6 +26,7 @@
 **[설정 상황]**
 
 소방 정보 종합 제공 사이트는 여러 군데에 흩어져 있는 정보들 중에 실생활에서 알아두면 좋은 정보들을 한 곳에 모아서 Fine이라는 프로젝트 명으로 서비스를 제공하려고 한다. 
+
 </br>
 
 **[요구 사항]**
@@ -33,6 +34,7 @@
 고객(소방 업계 종사자 혹은 희망자)은 소방 정보 종합 제공 사이트에서 소방 사건 사례, 소방 장비, 제설함, 소방 용수 시설 등 취업 혹은 날씨와 같은 고객들이 필요한 정보를 한 곳에서 제공하고자 한다.
 
 </br>
+
 # 요구 사항 정의
 
 **[메인 페이지]**
@@ -75,6 +77,7 @@
 2. 사용자는 주소를 통해 용수 시설의 정보를 조회할 수 있다.
 
 </br>
+
 # **시스템 기능 명세**
 
 1. **사용자 정보 관리**
@@ -93,14 +96,17 @@
     - 시스템은 소방 용수 시설의 주소와 용량 정보를 사용자에게 제공한다.
 
 </br>
+
 # E-R Diagram
-![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/diagram/ERDiagram.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/diagram/ERDiagram.png>
 </br>
+
 # ERD
-![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/diagram/diagram_final.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/diagram/diagram_final.png>
 </br>
+
 # TEST CASE 명세서
-![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/diagram/diagram_final.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/%ED%85%8C%EC%9D%B4%EC%8A%A4%20%EC%BC%80%EC%9D%B4%EC%8A%A4%20%EB%AA%85%EC%84%B8%EC%84%9C%20(1).png>
 
 ### TEST CASE
 ## 정보조회
@@ -136,7 +142,7 @@
         a.district = '성북구'
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A7%80%EC%97%AD1.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A7%80%EC%97%AD1.png>
 </div>
 </details>
 
@@ -161,10 +167,11 @@
         a.district; -- 지역구별로 정렬
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A7%80%EC%97%AD%202.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A7%80%EC%97%AD%202.png>
     
 </div>
 </details>
+
 ## 사건
 <details>
 <summary> 사용자는 사건의 사건 분류, 출동 일자 정보를 조회할 수 있다.</summary>
@@ -175,7 +182,7 @@
     FROM EVENT;
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%82%AC%EA%B1%B4%201.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%82%AC%EA%B1%B4%201.png>
 
 </div>
 </details>
@@ -201,7 +208,7 @@
     LEFT JOIN fire_agency fa ON a.id = fa.address_id;
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%82%AC%EA%B1%B4%202.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%82%AC%EA%B1%B4%202.png>
 </div>
 </details>
 
@@ -216,9 +223,10 @@
     WHERE a.district = '동작구';
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EA%B8%B0%EA%B4%80%201.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EA%B8%B0%EA%B4%80%201.png>
 </div>
 </details>  
+
 <details>
 <summary>사용자는 주소와 위치 별로 해당 소방 기관의 전화번호를 조회할 수 있다.</summary>
 <div markdown="6">
@@ -235,7 +243,7 @@
         fire_agency fa ON a.id = fa.address_id;
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EA%B8%B0%EA%B4%80%202.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EA%B8%B0%EA%B4%80%202.png>
 </div>
 </details>   
 
@@ -249,7 +257,7 @@
     FROM firefighting_equipment ;
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EC%9E%A5%EB%B9%84%201.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EC%9E%A5%EB%B9%84%201.png>
 </div>
 </details>
 
@@ -265,7 +273,7 @@
     WHERE a.district = '관악구';
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EC%9E%A5%EB%B9%84%202.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EC%9E%A5%EB%B9%84%202.png>
 </div>
 </details>
 
@@ -280,7 +288,7 @@
     JOIN address a ON sr.address_id = a.id;
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A0%9C%EC%84%A4%ED%95%A8.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A0%9C%EC%84%A4%ED%95%A8.png>
 </div>
 </details>
 
@@ -295,7 +303,7 @@
     FROM snow_removal_tool;
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A0%9C%EC%84%A4%EB%8F%84%EA%B5%AC1.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A0%9C%EC%84%A4%EB%8F%84%EA%B5%AC1.png>
 </div>
 </details>
 
@@ -310,7 +318,7 @@
     WHERE srb.id = '3';
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A0%9C%EC%84%A4%20%EB%8F%84%EA%B5%AC2.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A0%9C%EC%84%A4%20%EB%8F%84%EA%B5%AC2.png>
 </div>
 </details>
 
@@ -326,7 +334,7 @@
     FROM firefighting_water;
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%9A%A9%EC%88%98%20%EC%8B%9C%EC%84%A4%201.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%9A%A9%EC%88%98%20%EC%8B%9C%EC%84%A4%201.png>
 </div>
 </details>
 
@@ -342,7 +350,7 @@
     ORDER BY fw.last_inspection DESC;
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%9A%A9%EC%88%98%20%EC%8B%9C%EC%84%A4%202.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%9A%A9%EC%88%98%20%EC%8B%9C%EC%84%A4%202.png> 
 </div>
 </details>
 
@@ -358,6 +366,6 @@
     LIMIT 1;
     ```
     
-    ![Untitled](https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%9A%A9%EC%88%98%203.png)
+<img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%9A%A9%EC%88%98%203.png>
 </div>
 </details>
