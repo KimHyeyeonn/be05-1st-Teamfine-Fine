@@ -115,7 +115,8 @@
 <summary>사용자는 모든 지역구 별로 사건, 소방 기관, 장비, 용수 시설 조회할 수 있다. </summary>
 <div markdown="1">
     
-    ```sql
+ ```sql
+
     -- 성북구에서 발생한 사건, 기관, 제설함, 제설도구, 장비 및 용수시설 정보 조회
     SELECT
         e.id AS 'Event ID',
@@ -140,7 +141,8 @@
     LEFT JOIN firefighting_water fw ON a.id = fw.address_id
     WHERE
         a.district = '성북구'
-    ```
+
+```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A7%80%EC%97%AD1.png>
 </div>
@@ -150,7 +152,7 @@
 <summary> 사용자는 특정 구에서 발생한 사건, 기관, 제설함, 제설 도구, 장비 및 용수시설 정보를 조회할 수 있다 </summary>
 <div markdown="2">
     
-    ```sql
+```sql
     SELECT
         a.district AS 'District',
         e.event_case AS 'Event Case',
@@ -165,7 +167,7 @@
     LEFT JOIN firefighting_water fw ON a.id = fw.address_id
     ORDER BY
         a.district; -- 지역구별로 정렬
-    ```
+```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A7%80%EC%97%AD%202.png>
     
@@ -176,11 +178,13 @@
 <details>
 <summary> 사용자는 사건의 사건 분류, 출동 일자 정보를 조회할 수 있다.</summary>
 
-<div markdown="3">    
-    ```sql
+<div markdown="3"> 
+
+```sql
+
     SELECT event_case, dispatch_date
     FROM EVENT;
-    ```
+```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%82%AC%EA%B1%B4%201.png>
 
@@ -191,7 +195,8 @@
 <details> 
 <summary> 사용자는 사건 정보를 사건 분류, 출동 일자, 날씨, 소방 기관을 기준으로 조회할 수 있다. </summary>
 <div markdown="4">
-    ```sql
+
+```sql
     SELECT
         e.event_case AS 'Event Case',
         e.dispatch_date AS 'Dispatch Date',
@@ -206,7 +211,7 @@
     INNER JOIN weather w ON e.weather_id = w.id
     INNER JOIN address a ON e.address_id = a.id
     LEFT JOIN fire_agency fa ON a.id = fa.address_id;
-    ```
+```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%82%AC%EA%B1%B4%202.png>
 </div>
@@ -216,12 +221,13 @@
 <details>
 <summary>사용자는 해당 구의 소방 기관의 주소와 전화번호 정보를 조회할 수 있다.</summary>
 <div markdown="5">
-    ```sql
+
+```sql
     SELECT fa.phone_number AS 'Fire Station Phone Number'
     FROM fire_agency fa
     JOIN address a ON fa.address_id = a.id
     WHERE a.district = '동작구';
-    ```
+```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EA%B8%B0%EA%B4%80%201.png>
 </div>
@@ -230,6 +236,7 @@
 <details>
 <summary>사용자는 주소와 위치 별로 해당 소방 기관의 전화번호를 조회할 수 있다.</summary>
 <div markdown="6">
+
     ```sql
     SELECT
         a.district AS 'District',
@@ -252,10 +259,10 @@
 <summary>사용자는 소방 장비의 장비 분류, 구매 일자, 상태 정보를 조회할 수 있다.</summary>
 <div markdown="7">
     
-    ```sql
+ ```sql
     SELECT type, purchase_date, status
     FROM firefighting_equipment ;
-    ```
+```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EC%9E%A5%EB%B9%84%201.png>
 </div>
@@ -265,13 +272,14 @@
 <summary>사용자는 특정 구의 소방 기관이 소유하고 있는 장비랑 소방 기관 번호를 알 수 있다.</summary>
 <div markdown="8">
     
-    ```sql
+```sql
     SELECT fe.type, fe.purchase_date, fe.status, fa.phone_number
     FROM firefighting_equipment fe
     JOIN fire_agency fa ON fe.fire_agency_id = fa.id
     JOIN address a ON fa.address_id = a.id
     WHERE a.district = '관악구';
-    ```
+    
+```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%86%8C%EB%B0%A9%20%EC%9E%A5%EB%B9%84%202.png>
 </div>
@@ -282,11 +290,11 @@
 <details>
 <summary>사용자는 주소를 통해 제설함의 정보를 조회할 수 있다.</summary>
     
-    ```sql
+ ```sql
     SELECT sr.address_id, a.district, a.street_name, a.detail, sr.id AS snow_removal_box_id
     FROM snow_removal_box sr
     JOIN address a ON sr.address_id = a.id;
-    ```
+```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A0%9C%EC%84%A4%ED%95%A8.png>
 </div>
@@ -298,10 +306,10 @@
 <summary> 사용자는 제설 도구의 도구 유형, 구매 일자를 조회할 수 있다</summary>
 <div markdown="9">
     
-    ```sql
+```sql
     SELECT TYPE, purchase_date
     FROM snow_removal_tool;
-    ```
+```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A0%9C%EC%84%A4%EB%8F%84%EA%B5%AC1.png>
 </div>
@@ -311,12 +319,12 @@
 <summary> 사용자는 제설함 번호로 제설 도구의 정보를 조회할 수 있다.</summary>
 <div markdown="10">
     
-    ```sql
+```sql
     SELECT srt.*
     FROM snow_removal_box srb
     JOIN snow_removal_tool srt ON srb.id = srt.snow_removal_box_id
     WHERE srb.id = '3';
-    ```
+ ```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%A0%9C%EC%84%A4%20%EB%8F%84%EA%B5%AC2.png>
 </div>
@@ -329,10 +337,10 @@
 <summary> 사용자는 소방용수시설의 사용 기한을 조회할 수 있다.</summary>
 <div markdown="11">
     
-    ```sql
+ ```sql
     SELECT last_inspection
     FROM firefighting_water;
-    ```
+```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%9A%A9%EC%88%98%20%EC%8B%9C%EC%84%A4%201.png>
 </div>
@@ -342,13 +350,13 @@
 <summary> 사용자는 특정 주소의 소방용수시설 사용 기한을 조회할 수 있다.</summary>
 <div markdown="12">
     
-    ```sql
+```sql
     SELECT fw.address_id, a.district, a.street_name, a.detail, fw.last_inspection
     FROM firefighting_water fw
     JOIN address a ON fw.address_id = a.id
     WHERE a.district = '강남구' AND a.street_name = '테헤란로'
     ORDER BY fw.last_inspection DESC;
-    ```
+```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%9A%A9%EC%88%98%20%EC%8B%9C%EC%84%A4%202.png> 
 </div>
@@ -358,13 +366,13 @@
 <summary> 사용자는 최근에 사용한 소방용수시설의 사용 기한을 조회할 수 있다.</summary>
 <div markdown="13">
     
-    ```sql
+```sql
     SELECT fw.address_id, a.district, a.street_name, a.detail, fw.last_inspection
     FROM firefighting_water fw
     JOIN address a ON fw.address_id = a.id
     ORDER BY fw.last_inspection DESC
     LIMIT 1;
-    ```
+```
     
 <img src=https://github.com/beyond-sw-camp/be05-1st-Teamfine-Fine/blob/main/img/testcase/TESTCASE_IMG/%EC%9A%A9%EC%88%98%203.png>
 </div>
